@@ -1,0 +1,34 @@
+.user-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  width: 350px;
+}
+
+.user-list__link {
+  text-decoration: none;
+  background-color: #CAAA8E;
+  color: #fff;
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 3px 5px;
+  border-bottom: 3px solid #a58970;
+
+  &--basket {
+    padding-left: 40px;
+  }
+
+  &:hover {
+    transition: .4s;
+    color: #000;
+  }
+
+  &:focus {
+    background-color: #a58970;
+    color: #000;
+    transition: 0s;
+  }
+}

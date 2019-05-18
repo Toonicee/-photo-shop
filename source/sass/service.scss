@@ -1,0 +1,28 @@
+.service__list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.service__link {
+  display: block;
+  width: 200px;
+  height: auto;
+  background-color: pink;
+  text-decoration: none;
+  color: #60452F;
+  border: 1px solid #60452F;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.service {
+  width: 93%;
+  margin: 0 auto;
+}
+
+.service__item {
+  margin: 10px 20px;
+}

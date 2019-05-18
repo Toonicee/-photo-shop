@@ -1,5 +1,5 @@
 .page-header {
-
+  width: 100%;
   &::before {
     content:"";
     position: absolute;
@@ -7,8 +7,7 @@
     height: 15px;
     top: 0;
     left: 0;
-    background-image: url("../img/bgtb.png");
-    background-repeat: no-repeat;
+    background-image: url("../img/bd-header.png");
   }
 }
 
@@ -18,8 +17,34 @@
 
 .page-header__container {
   display: flex;
+  justify-content: space-between;
+  width: 93%;
+  margin: 0 auto;
 }
 
 .page-header__wrapper {
+  margin-top: 10px;
+      display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
+.page-haeder__title {
+  margin: 0 0 20px 0;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+.page-header__wrapper-title {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .page-header__container {
+    display: block;
+  }
+
+  .page-header__logo {
+    justify-content: center;
+  }
 }

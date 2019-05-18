@@ -1,8 +1,23 @@
 @import "page-header.scss";
 @import "main-nav.scss";
 @import "site-list.scss";
+@import "user.scss";
+@import "social.scss";
+@import "page-main.scss";
+@import "service.scss";
+@import "page-footer.scss";
 
 body {
-  width: 100%;
   background-color: #F8ECE3;
+  color: #60452F;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.container {
+  margin-top: 10px;
+  position: relative;
+  height: 100px;
 }

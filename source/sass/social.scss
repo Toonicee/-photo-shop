@@ -1,0 +1,47 @@
+.social {
+  display: flex;
+  align-items: center;
+}
+
+.social__list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.social__number {
+  text-decoration: none;
+  color: #60452F;
+  font-size: 24px;
+  margin-left: 15px;
+
+  &:hover {
+    transition: .3s;
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    transition: .3s;
+    transform: scale(0.9);
+  }
+}
+
+.social__link {
+  &:hover {
+    img {
+      transition: .3s;
+      transform: scale(1.2);
+    }
+
+  &:focus {
+    img {
+      transition: .3s;
+      transform: scale(0.9);
+      opacity: 0.4;
+    }
+  }
+  }
+}
+
+
+
