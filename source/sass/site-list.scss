@@ -5,6 +5,7 @@
 .site-list__item {
   padding: 10px 0;
   transition: 0.3s;
+  position: relative;
   z-index: 35;
 
   &:hover  {
@@ -28,7 +29,7 @@
   box-shadow: 0 0 30px rgba(0,0,0,.2);
   box-sizing: border-box;
   visibility: hidden;
-  opacity: 1;
+  opacity: 0;
   transform: translate(-50%, 30px);
   transition: .3s;
   font-size: 11px;
@@ -42,17 +43,27 @@
 }
 
 .site-list__link {
+  display: block;
   text-decoration: none;
   color: #fff;
   z-index: 40;
   font-size: 20px;
   transition: .2s;
+  z-index: auto;
+  position: relative;
+  padding: 8px 15px;
+  line-height: 1;
+  letter-spacing: 3px;
 
   &--sub {
     transition: .2s;
-     text-decoration: none;
-     color: #fff;
-     display: block;
+    text-decoration: none;
+    color: #fff;
+    z-index: 10;
+    display: block;
+    padding: 8px 15px;
+    line-height: 1;
+    letter-spacing: 3px;
 
      &:focus {
       opacity: 0.2;
@@ -66,42 +77,20 @@
   &:before {
     content: "";
     position: absolute;
-    z-index: 1;
+    z-index: 250;
     left: 50%;
-    top: 100%;
-    width: 10px;
-    height: 10px;
+    top: 121%;
+    width: 13px;
+    height: 13px;
     background: #60452F;
     border-radius: 50%;
-    transform: translate(-50%, 26px);
+    transform: translate(-50%, 35px);
     opacity: 0;
     transition: .3s;
   }
 }
 
 @media (max-width: 950px) {
-  .site-list--sub {
-/*    position: fixed;
-    display: block;
-    list-style: none;
-    left: 50%;
-    top: 100%;
-    z-index: 200;
-    width: 230px;
-    padding: 15px 0 15px;
-    margin-top: 10px;
-    background-color: #60452F;
-    border-radius: 5px;
-    box-shadow: 0 0 30px rgba(0,0,0,.2);
-    box-sizing: border-box;
-    transform: translate(-50%, 30px);
-    transition: .3s;
-    font-size: 11px;
-    letter-spacing: 1px;
-    padding: 5px 10px;
-    transition: .3s linear;*/
-  }
-
   .site-list__item {
     padding: 10px 0;
     transition: 0.3s;
@@ -113,9 +102,45 @@
       border-radius: 10px;
       box-shadow: 0 0 30px rgba(0,0,0,.2)
     }
+
+     &--service::before,
+     &--width::before {
+        content: "";
+        transition: .6s;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 20px;
+        transform: rotate(90deg);
+        right: 20px;
+        background: url("../img/arr.svg") no-repeat;
+    }
+
+    &--service:hover::before,
+    &--width:hover::before {
+      transform: rotate(270deg)
+    }
   }
 
-  .site-list__link:before {
-    content: none;
+  .site-list__link {
+    &:before {
+      content: none;
+    }
+  }
+
+  .site-list--width {
+    width: 150px;
+  }
+
+  .site-list--sub {
+    position: static;
+    z-index: auto;
+    opacity: 0;
+    display: none;
+    transform: translate(0, 0);
+    width: 100%;
   }
 }
+
+
+

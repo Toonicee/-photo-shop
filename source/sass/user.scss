@@ -19,6 +19,18 @@
 
   &--basket {
     padding-left: 40px;
+    position: relative;
+    fill: #60452F;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 7px;
+      left: 10px;
+      background: url("../img/icon-cart.svg") no-repeat;
+    }
   }
 
   &:hover {
@@ -30,5 +42,17 @@
     background-color: #a58970;
     color: #000;
     transition: 0s;
+  }
+}
+
+@media (max-width: 550px) {
+
+ .user-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-list__item {
+    margin: 5px 0;
   }
 }

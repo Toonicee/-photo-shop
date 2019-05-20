@@ -27,7 +27,7 @@
         </li>
       </ul>
       </div>
-      <div class="social social">
+      <div class="social">
         <ul class="social__list">
           <li class="social__item">
             <a href="" class="social__link">
@@ -67,14 +67,14 @@
   </div>
     <div class="container">
       <input type="checkbox" name="toggle" id="menu" class="toggleMenu">
-      <label for="menu" class="label-Menu">Меню</label>
+      <label for="menu" class="label-Menu"><span class="visually-hidden">Меню</span></label>
       <nav class="nav">
         <ul class="nav__list site-list">
           <li class="nav__item site-list__item">
             <a href="" class="site-list__link">Главная</a>
           </li>
           <li class="nav__item site-list__item site-list__item--service">
-            <a href="" class="site-list__link">Услуги</a>
+            <a href="" class="site-list__link ">Услуги</a>
             <ul class="site-list site-list--sub">
               <li class="site-list__item">
                 <a href="" class="site-list__link--sub">Печать on-line</a>
@@ -87,7 +87,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav__item site-list__item">
+          <li class="nav__item site-list__item  site-list__item--width">
             <a href="" class="site-list__link">Товары</a>
             <ul class="site-list site-list--sub site-list--width">
               <li class="site-list__item">
@@ -113,39 +113,84 @@
       <section class="service">
       <ul class="service__list">
         <li class="service__item">
-          <a href="#" class="service__link">
-            <h3 class="service__title">Печать на фото</h3>
-            <img class="service__image" src="#">
-          </a>
+            <h3 class="service__title">Печать фото on-line</h3>
+            <img class="service__image" src="img/photo.png" width="200" height="150" alt="Фото с добавлением рамки">
+          <div class="service__wrapper">
+            <a href="" class="service__link">Перейти</a>
+          </div>
         </li>
         <li class="service__item">
-          <a href="" class="service__link">
-            <h3 class="service__title">Фото с добавлением рамки</h3>
-            <img class="service__image" src="#">
-          </a>
+          <h3 class="service__title">Фото с добавлением рамки</h3>
+          <img class="service__image" src="img/photo.png" width="200" height="150" alt="Фото с добавлением рамки">
+          <div class="service__wrapper">
+            <a href="" class="service__link">Перейти</a>
+          </div>
         </li>
         <li class="service__item">
-          <a href="" class="service__link">
-            <h3 class="service__title">Календарь с Вашим фото</h3>
-            <img class="service__image" src="#">
-          </a>
+          <h3 class="service__title">Календарь с Вашим фото</h3>
+          <img class="service__image" src="img/calendar-table.png" width="200" height="150" alt="Календарь с Вашим фото">
+          <div class="service__wrapper">
+            <a href="" class="service__link">Перейти</a>
+          </div>
         </li>
         <li class="service__item">
-          <a href="" class="service__link">
-            <h3 class="service__title">Фоторамки</h3>
-            <img class="service__image" src="#">
-          </a>
+          <h3 class="service__title">Фоторамки</h3>
+          <img class="service__image" src="img/Photo-bord.png"  width="190" height="140" alt="Фоторамки">
+          <div class="service__wrapper">
+            <a href="" class="service__link">Перейти</a>
+          </div>
         </li>
         <li class="service__item">
-          <a href="" class="service__link">
-            <h3 class="service__title">Альбомы</h3>
-            <img class="service__image" src="#">
-          </a>
+          <h3 class="service__title">Альбомы</h3>
+          <img class="service__image" src="img/photo.png" width="200" height="150" alt="Альбомы">
+          <div class="service__wrapper">
+            <a href="" class="service__link">Перейти</a>
+          </div>
         </li>
       </ul>
       </section>
     </div>
   </main>
   <footer class="page-footer"></footer>
+  <div class="modal modal-login">
+    <button class="modal__close"><span class="visually-hidden">Закрыть</span></button>
+          <input class="modal__ent visually-hidden" type="radio" name="out" id="ent" checked>
+          <label class="modal__link" for="ent">Вход</label>
+          <input class="modal__reg visually-hidden" type="radio" name="out" id="reg">
+          <label class="modal__link" for="reg">Регистрация</label>
+      <form class="modal__form modal__form--log" action="/user/signin" method="post" id="signin">
+        <fieldset class="modal__fieldset">
+          <label class="modal__label" for="email">e-mail</label>
+          <input class="modal__input" type="email" name="email" id="email" placeholder="e-mail" value="" required="">
+          <label class="modal__label" for="password">Пароль</label>
+          <input class="modal__input"  type="password" name="password" id="password" placeholder="Пароль" required="">
+        </fieldset>
+        <button class="modal__button" type="submit">Вход</button>
+        <a href="/user/recovery">Забыли пароль?</a>
+      </form>
+      <form class="modal__form modal__form--reg" action="/user/signup" method="post" id="signup">
+        <fieldset class="modal__fieldset">
+          <label class="modal__label" for="name">Имя</label>
+          <input class="modal__input"  type="text" name="name" id="name" placeholder="Ваше имя" ]="" value="" required="">
+        </fieldset>
+        <fieldset class="modal__fieldset">
+          <label class="modal__label" for="email">e-mail</label>
+          <input class="modal__input"  type="email" name="email" id="email" placeholder="e-mail" value="" required="">
+        </fieldset>
+        <fieldset class="modal__fieldset">
+          <label class="modal__label" for="password">Пароль</label>
+          <input class="modal__input"  type="password" name="password" id="password" placeholder="Пароль" required="">
+        </fieldset>
+        <fieldset class="modal__fieldset">
+          <label class="modal__label" for="address">Адрес</label>
+          <input class="modal__input"  type="text" name="address" id="address" placeholder="Адрес" value="" required="">
+        </fieldset>
+        <fieldset class="modal__fieldset">
+          <label class="modal__label" for="phone">Телефон</label>
+          <input class="modal__input"  type="text" name="phone" id="phone" placeholder="Телефон" value="" required="">
+        </fieldset>
+        <button class="modal__button" type="submit">Регистрация</button>
+      </form>
+  </div>
 </body>
 </html>

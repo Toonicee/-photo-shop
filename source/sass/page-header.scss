@@ -40,11 +40,27 @@
 }
 
 @media (max-width: 768px) {
+
   .page-header__container {
     display: block;
   }
 
   .page-header__logo {
     justify-content: center;
+  }
+
+  .page-header__wrapper {
+    align-items: center;
+  }
+
+  .page-header__wrapper-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 550px) {
+
+ .page-haeder__title {
+    font-size: 30px;
   }
 }

@@ -1,0 +1,111 @@
+.modal-login {
+  padding: 30px;
+  background-color: #F8ECE3;
+  /*position: fixed;*/
+  left: 25%;
+  top: 25%;
+  width: 250px;
+  z-index: 40;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+
+.modal__fieldset {
+  border: none;
+  display: flex;
+}
+
+.modal__form {
+
+  &--reg {
+    display: none;
+  }
+
+  &--log {
+    display: none;;
+  }
+}
+
+.modal__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+.modal__link {
+  text-decoration: none;
+  color: #60452F;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.modal__close {
+  background-color: #F8ECE3;
+  border: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: -25px;
+  top: 0;
+  border-radius: 5px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 1px;
+    width: 19px;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(45deg);
+    border-radius: 5px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 1px;
+    width: 19px;
+    height: 3px;
+    background-color: #000000;
+    transform: rotate(-45deg);
+    border-radius: 5px;
+  }
+}
+
+.modal__ent:checked + label  ~ .modal__form--log {
+    display: block;
+}
+
+.modal__ent:checked + label {
+    color: red;
+}
+
+.modal__reg:checked + label ~ .modal__form--reg {
+    display: block;
+}
+
+.modal__button {
+    background-color: #60452F;
+    color: #fff;
+    font-size: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    border: none;
+    padding: 3px 7px;
+    border-bottom: 3px solid #4c3726;
+
+    &:hover {
+      transition: .4s;
+      color: #000;
+    }
+
+    &:focus {
+      background-color: #4c3726;
+      color: #000;
+      transition: 0s;
+    }
+}
