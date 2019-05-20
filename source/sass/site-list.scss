@@ -72,6 +72,13 @@
 
   &:focus {
     opacity: 0.2;
+
+    .site-list--sub {
+      visibility: visible;
+      opacity: 1;
+      z-index: 300;
+      transform: translate(-50%, 0);
+    }
   }
 
   &:before {

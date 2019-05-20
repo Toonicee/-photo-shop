@@ -1,18 +1,22 @@
 .modal-login {
   padding: 30px;
   background-color: #F8ECE3;
-  /*position: fixed;*/
+  position: fixed;
   left: 25%;
   top: 25%;
-  width: 250px;
+  width: 270px;
   z-index: 40;
   box-shadow: 0 0 25px rgba(0,0,0,0.5);
   border-radius: 10px;
+
+  a {
+    display: block;
+  }
 }
 
 .modal__fieldset {
   border: none;
-  display: flex;
+  padding: 20px 0;
 }
 
 .modal__form {
@@ -39,6 +43,8 @@
   color: #60452F;
   font-weight: 700;
   font-size: 18px;
+  opacity: 0.4;
+  margin: 0 20px;
 }
 
 .modal__close {
@@ -76,32 +82,70 @@
   }
 }
 
-.modal__ent:checked + label  ~ .modal__form--log {
-    display: block;
+.modal__input {
+  padding: 5px;
+  background-color: initial;
+  margin: 20px 0 20px 30px;
+  border: none;
+  border-bottom: 2px solid #60452f;
 }
+
+.modal__label {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
 
 .modal__ent:checked + label {
-    color: red;
+  opacity: 1;
+
+  ~ .modal__form--log {
+    display: block;
+  }
 }
 
-.modal__reg:checked + label ~ .modal__form--reg {
+.modal__reg:checked + label {
+  opacity: 1;
+
+  ~ .modal__form--reg {
     display: block;
+  }
 }
 
 .modal__button {
-    background-color: #60452F;
-    color: #fff;
-    font-size: 20px;
-    display: inline-block;
-    border-radius: 10px;
-    border: none;
-    padding: 3px 7px;
-    border-bottom: 3px solid #4c3726;
+  text-align: right;
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+  background-color: #60452F;
+  color: #fff;
+  font-size: 20px;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  padding: 4px 14px;
+  border-bottom: 3px solid #4c3726;
 
-    &:hover {
-      transition: .4s;
-      color: #000;
+  &--login {
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 0;
+      left: 0;
+      background: url("../img/login.svg");
+      background-color: red;
     }
+  }
+
+  &:hover {
+    transition: .4s;
+    color: #000;
+  }
 
     &:focus {
       background-color: #4c3726;
