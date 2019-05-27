@@ -53,3 +53,24 @@
     fill: rgba(0, 0, 0, 0.4);
   }
 }
+
+@media (max-width: 1000px) {
+  .order {
+    width: 768px;
+  }
+
+  .order__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .order {
+    width: 320px;
+  }
+  .order__table {
+    width: 100%;
+  }
+}
+
