@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   background-color: #60452F;
-  width: 93%;
+  width: 100%;
   padding: 4px 0;
   margin: 0 auto;
   border-radius: 10px;
@@ -46,7 +46,7 @@
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
   .label-Menu {
     display: block;
     position: relative;

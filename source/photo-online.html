@@ -20,6 +20,9 @@
     <symbol id="icon-user" viewBox="0 0 512 512">
       <path d="M437.02 330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521 243.251 404 198.548 404 148 404 66.393 337.607 0 256 0S108 66.393 108 148c0 50.548 25.479 95.251 64.262 121.962-36.21 12.495-69.398 33.136-97.281 61.018C26.629 379.333 0 443.62 0 512h40c0-119.103 96.897-216 216-216s216 96.897 216 216h40c0-68.38-26.629-132.667-74.98-181.02zM256 256c-59.551 0-108-48.448-108-108S196.449 40 256 40s108 48.448 108 108-48.449 108-108 108z"/>
     </symbol>
+    <symbol  id="arrow" viewBox="0 0 779.652 779.652">
+      <path d="M679.503 349.728L151.09 9.181C119.742-7.703 83.832-5.951 83.832 54.688v670.58c0 55.408 38.525 64.17 67.258 45.506l528.442-340.547c21.723-22.252 21.723-58.274-.029-80.499z"/>
+    </symbol>
   </svg>
 	<header class="page-header">
     <div class="page-header__container">
@@ -32,16 +35,28 @@
             <h1 class="page-haeder__title">Фотопечать с доставкой</h1>
           </div>
         <div class="user">
-      <ul class="user-list">
+
+      <ul class="user-list user-list--aut">
         <li class="user-list__item">
-          <a href="" class="user-list__link">Вход/Регистрация</a>
-        </li>
-        <li class="user-list__item">
-          <a href="" class="user-list__link user-list__link--basket">Пусто
-            <svg class="user__icon-cart" width="20.294" height="18.849">
-              <use xlink:href="#icon-cart"></use>
+          <!-- <a href="" class="user-list__link">User1</a> -->
+          <input type="checkbox" name="user-menu" id="user">
+          <label for="user" class="user-list__link user-list__link--toggle">user-menu
+            <svg class="user__arrow" width="15" height="15">
+              <use xlink:href="#arrow"></use>
             </svg>
-          </a>
+          </label>
+          <ul class="user-list__sub">
+            <li class="user-list__item user-list__item--sub">
+              <a href="" class="user-list__link user-list__link--basket user-list__link--sub">Пусто
+                <svg class="user__icon-cart" width="20.294" height="18.849">
+                  <use xlink:href="#icon-cart"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="user-list__item">
+              <a href="" class="user-list__link user-list__link--sub">Выход</a>
+            </li>
+          </ul>
         </li>
       </ul>
       </div>
@@ -95,7 +110,7 @@
             <a href="" class="site-list__link ">Услуги</a>
             <ul class="site-list site-list--sub">
               <li class="site-list__item">
-                <a href="photo-online.html" class="site-list__link--sub">Печать on-line</a>
+                <a href="" class="site-list__link--sub">Печать on-line</a>
               </li>
               <li class="site-list__item">
                 <a href="" class="site-list__link--sub">Фото с добавлением рамки</a>
@@ -128,44 +143,60 @@
   </header>
   <main class="page-main">
     <div class="page-main__contaiter">
-      <section class="service">
-      <ul class="service__list">
-        <li class="service__item">
-            <h3 class="service__title">Печать фото on-line</h3>
-            <img class="service__image" src="img/photo.png" width="200" height="150" alt="Фото с добавлением рамки">
-          <div class="service__wrapper">
-            <a href="photo-online.html" class="service__link">Перейти</a>
-          </div>
-        </li>
-        <li class="service__item">
-          <h3 class="service__title">Фото с добавлением рамки</h3>
-          <img class="service__image" src="img/photo.png" width="200" height="150" alt="Фото с добавлением рамки">
-          <div class="service__wrapper">
-            <a href="" class="service__link">Перейти</a>
-          </div>
-        </li>
-        <li class="service__item">
-          <h3 class="service__title">Календарь с Вашим фото</h3>
-          <img class="service__image" src="img/calendar-table.png" width="200" height="150" alt="Календарь с Вашим фото">
-          <div class="service__wrapper">
-            <a href="" class="service__link">Перейти</a>
-          </div>
-        </li>
-        <li class="service__item">
-          <h3 class="service__title">Фоторамки</h3>
-          <img class="service__image" src="img/Photo-bord.png"  width="190" height="140" alt="Фоторамки">
-          <div class="service__wrapper">
-            <a href="" class="service__link">Перейти</a>
-          </div>
-        </li>
-        <li class="service__item">
-          <h3 class="service__title">Альбомы</h3>
-          <img class="service__image" src="img/photo.png" width="200" height="150" alt="Альбомы">
-          <div class="service__wrapper">
-            <a href="" class="service__link">Перейти</a>
-          </div>
-        </li>
-      </ul>
+      <section class="order">
+        <h2 class="order__title">Печать фото on-line</h2>
+        <div class="order__wrapper">
+          <img class="order__image" src="/img/photo.png" alt="" width="300" height="300">
+          <table class="order__table">
+          <tr>
+            <th colspan="2">Стандартные форматы</th>
+          </tr>
+          <tr>
+            <td>Фото 10х15</td>
+            <td>7 i</td>
+          </tr>
+          <tr>
+            <td>Фото 15х21</td>
+            <td>15 i</td>
+          </tr>
+          <tr>
+             <td>Фото 21х30 (А4)</td>
+             <td>30 i</td>
+          </tr>
+          <tr>
+            <td>Фото 30х42 (А3)</td>
+            <td>60 i</td>
+          </tr>
+          <tr>
+            <th colspan="2">Произвольные форматы</th>
+          </tr>
+          <tr>
+            <td>Фото до 10х15</td>
+            <td>6 i</td>
+          </tr>
+          <tr>
+              <td>Фото от 10х15 до 15х21</td>
+              <td>14 i</td>
+            </tr>
+            <tr>
+              <td>Фото от 15х21 до 21х30</td>
+              <td>14 i</td>
+            </tr>
+            <tr>
+              <td>Фото от 21х30 до 30х42</td>
+              <td>14 i</td>
+            </tr>
+            <tr>
+              <td>Добавление фоторамки</td>
+              <td>5 i</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a href="/falbum/add" class="button order__button">Заказать</a>
+              </td>
+            </tr>
+          </table>
+        </div>
       </section>
     </div>
   </main>

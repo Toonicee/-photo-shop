@@ -27,8 +27,12 @@
   border: 1px solid #60452F;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  transform: scale(1);
 
   &:hover {
+    transition: .3s;
+    transform: scale(1.05);
+
     .service__wrapper {
       opacity: 1;
       transition: .4s
@@ -37,7 +41,7 @@
 }
 
 .service {
-  width: 93%;
+  width: 1050px;
   margin: 0 auto;
 }
 
@@ -57,7 +61,7 @@
 
   &:active {
     background-color: #a58970;
-    color: #000;
+    color: rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -78,4 +82,18 @@
 .service__image {
   display: block;
   margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .service {
+    width: 768px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .service {
+    width: 320px;
+    margin: 0 auto;
+  }
 }
