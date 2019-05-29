@@ -43,7 +43,7 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 700px) {
 
  .social {
   margin: 20px 0;
@@ -58,7 +58,7 @@
 
   .social__list {
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 

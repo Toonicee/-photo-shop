@@ -2,15 +2,28 @@
   padding: 30px;
   background-color: #F8ECE3;
   position: fixed;
-  left: 25%;
-  top: 25%;
+  display: none;
+  left: 35%;
+  top: 10%;
   width: 270px;
   z-index: 40;
   box-shadow: 0 0 25px rgba(0,0,0,0.5);
   border-radius: 10px;
 
   a {
-    display: block;
+    display: inline-block;
+    margin: 20px 0 0 73px;
+    text-decoration: none;
+    color: #60452f;
+    font-size: 18px;
+
+    &:hover {
+      border-bottom: 2px solid #60452f;
+    }
+
+    &:focus {
+      opacity: 0.3;
+    }
   }
 }
 
@@ -23,10 +36,15 @@
 
   &--reg {
     display: none;
+    transition: .4s;
+    transform: perspective(500px) rotateY(90deg);
+    transform: translate(10px 10px);
   }
 
   &--log {
-    display: none;;
+    display: none;
+    transition: .4s;
+    transform: perspective(500px) rotateY(-90deg);
   }
 }
 
@@ -44,7 +62,7 @@
   font-weight: 700;
   font-size: 18px;
   opacity: 0.4;
-  margin: 0 20px;
+  margin: 0 30px;
 }
 
 .modal__close {
@@ -94,6 +112,15 @@
   display: flex;
   justify-content: space-around;
   align-items: baseline;
+  position: relative;
+  fill: #60452f;
+
+  svg {
+    position: absolute;
+    top: 25px;
+    right: 9px;
+    transform: rotate(260deg);
+  }
 }
 
 
@@ -102,6 +129,7 @@
 
   ~ .modal__form--log {
     display: block;
+    transform: perspective(500px) rotateY(0);
   }
 }
 
@@ -110,12 +138,13 @@
 
   ~ .modal__form--reg {
     display: block;
+    transform: perspective(500px) rotateY(0);
   }
 }
 
 .modal__button {
   text-align: right;
-  width: 100px;
+  width: auto;
   display: block;
   margin: 0 auto;
   background-color: #60452F;
@@ -125,31 +154,28 @@
   border-radius: 10px;
   border: none;
   position: relative;
-  padding: 4px 14px;
+  padding: 4px 14px 4px 38px;
   border-bottom: 3px solid #4c3726;
-
+  fill: #fff;
   &--login {
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      top: 0;
-      left: 0;
-      background: url("../img/login.svg");
-      background-color: red;
-    }
   }
 
   &:hover {
     transition: .4s;
     color: #000;
+    fill: #000;
   }
 
     &:focus {
       background-color: #4c3726;
-      color: #000;
+      color: rgba(0, 0, 0, 0.4);
       transition: 0s;
+      fill: rgba(0, 0, 0, 0.4);
     }
+
+  svg {
+    position: absolute;
+    left: 9px;
+    top: 6px
+  }
 }

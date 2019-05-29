@@ -86,7 +86,7 @@
     position: absolute;
     z-index: 250;
     left: 50%;
-    top: 121%;
+    top: 80%;
     width: 13px;
     height: 13px;
     background: #60452F;
@@ -97,7 +97,7 @@
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
   .site-list__item {
     padding: 10px 0;
     transition: 0.3s;
