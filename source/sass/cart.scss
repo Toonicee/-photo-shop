@@ -1,0 +1,28 @@
+.cart {
+  width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart__table {
+  border-collapse: collapse;
+
+  input {
+    background-color: initial;
+    border: 1px solid #000;
+    width: 50px;
+
+  }
+
+  tr {
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+  }
+
+}
+
+tr:nth-child(2n) {
+    background-color: rgb(255, 230, 210);
+  }
