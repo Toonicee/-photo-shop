@@ -26,3 +26,11 @@
 tr:nth-child(2n) {
     background-color: rgb(255, 230, 210);
   }
+
+
+@media (max-width: 768px) {
+  .cart {
+    width: 320px;
+    margin: 0 auto;
+  }
+}

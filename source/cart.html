@@ -153,10 +153,10 @@
               <a href="#">Фото 10х15</a>
             </td>
             <td>
-              <input type="number" name="10x15" min="0" >
+              <input type="number" name="number" min="0" >
             </td>
-            <td>7 </td>
-            <td>nan </td>
+            <td class="price">7 </td>
+            <td class="res">руб</td>
           </tr>
           <tr>
             <td>Икс</td>
@@ -164,10 +164,10 @@
               <a href="#">Фото 13х18</a>
             </td>
             <td>
-              <input type="number" name="13x18" min="0" >
+              <input type="number" name="number1" min="0" >
             </td>
             <td>12 </td>
-            <td>nan </td>
+            <td class="res">руб</td>
           </tr>
           <tr>
             <td>Икс</td>
@@ -250,10 +250,10 @@
       <form class="modal__form modal__form--log" action="/user/signin" method="post" id="signin">
         <fieldset class="modal__fieldset">
           <label class="modal__label">e-mail
-            <input class="modal__input" type="email" name="email" placeholder="e-mail" value="" required="">
+            <input class="modal__input check" type="email" name="email" placeholder="e-mail" value="" required="">
           </label>
           <label class="modal__label">Пароль
-            <input class="modal__input"  type="password" name="password" id="password" placeholder="Пароль" required="">
+            <input class="modal__input check"  type="password" name="password" id="password" placeholder="Пароль" required="">
           </label>
         </fieldset>
         <button class="modal__button modal__button--login" type="submit">Вход
@@ -266,18 +266,18 @@
       <form class="modal__form modal__form--reg" action="/user/signup" method="post" id="signup">
         <fieldset class="modal__fieldset">
           <label class="modal__label">Имя
-            <input class="modal__input"  type="text" name="name" placeholder="Ваше имя" ]="" value="" required="">
+            <input class="modal__input check"  type="text" name="name" placeholder="Ваше имя" value="" required="">
           </label>
           <label class="modal__label">e-mail
-            <input class="modal__input"  type="email" name="email" placeholder="e-mail" value="" required="">
+            <input class="modal__input check"  type="email" name="email" placeholder="e-mail" value="" required="">
           </label>
-          <label class="modal__label" >Пароль
+          <label class="modal__label check" >Пароль
             <input class="modal__input"  type="password" name="password" placeholder="Пароль" required="">
           </label>
-          <label class="modal__label">Адрес
+          <label class="modal__label check">Адрес
             <input class="modal__input"  type="text" name="address" placeholder="Адрес" value="" required="">
           </label>
-          <label class="modal__label">Телефон
+          <label class="modal__label check">Телефон
             <input class="modal__input"  type="text" name="phone" placeholder="Телефон" value="" required="">
             <svg class="modal__icon-phone" width="15" height="15">
               <use xlink:href="#icon-phone"></use>
@@ -291,5 +291,6 @@
         </button>
       </form>
   </div>
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -61,7 +61,7 @@
 
   &:checked + label {
     .user__arrow {
-      transform: rotate(270deg);
+      transform: rotate(90deg);
     }
   }
 }
@@ -72,7 +72,7 @@
 
 .user__arrow {
   transition: .7s;
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 .user-list__item {
