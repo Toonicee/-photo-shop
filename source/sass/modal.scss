@@ -1,12 +1,12 @@
 .modal-login {
   padding: 30px;
+  display: none;
   background-color: #F8ECE3;
   position: fixed;
-  display: none;
   left: 35%;
   top: 10%;
   width: 270px;
-  z-index: 40;
+  z-index: 100;
   box-shadow: 0 0 25px rgba(0,0,0,0.5);
   border-radius: 10px;
 
@@ -177,5 +177,20 @@
     position: absolute;
     left: 9px;
     top: 6px
+  }
+}
+
+
+@media (max-width: 768px) {
+  .modal-login {
+    padding: 30px;
+    left: 0;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .modal__close {
+    right: 10px;
+    top: 10px;
   }
 }
