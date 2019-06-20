@@ -26,16 +26,18 @@
   }
 }
 
+.social__item {
+}
+
 .social__link {
   &:hover {
     img {
-      transition: .3s;
+      transition: all 0.4s ease-in-out;
       transform: scale(1.2);
     }
 
   &:focus {
     img {
-      transition: .3s;
       transform: scale(0.9);
       opacity: 0.4;
     }

@@ -16,10 +16,11 @@
 .service__item {
   display: flex;
   flex-direction: column;
-  justifjy-content: flex-start;
+  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
   width: 200px;
+  transition: all 0.4s ease-in-out;
   height: 300px;
   position: relative;
   background-color: #F8ECE3;
@@ -30,12 +31,15 @@
   transform: scale(1);
 
   &:hover {
-    transition: .3s;
     transform: scale(1.05);
 
     .service__wrapper {
       opacity: 1;
       transition: .4s
+    }
+
+    .service__link {
+      transform: scale(1.2);
     }
   }
 }
@@ -54,6 +58,8 @@
   border-radius: 10px;
   padding: 3px 5px;
   border-bottom: 3px solid #a58970;
+  transform: scale(0.2);
+  transition: all 0.4s ease-in-out;
 
   &:hover {
     color: #000;
