@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 </head>
 <body>
   <svg style="display: none;">
@@ -144,96 +145,166 @@
   <main class="page-main">
     <div class="page-main__contaiter">
       <section class="cart">
-        <h2 class="cart__title">Корзина</h2>
         <div class="cart__wrapper">
           <table class="cart__table">
-          <tr>
-            <td>Икс</td>
+            <tr>
+              <th colspan="5">
+                <h2 class="cart__title">Корзина</h2>
+              </th>
+            <tr>
+            <td>
+              <button class="cart__btn"><span class="visually-hidden">Удалить</span></button>
+            </td>
             <td>
               <a href="#">Фото 10х15</a>
             </td>
             <td>
-              <input type="number" name="number" min="0" >
+              <div class="stepper js-spinner">
+                <input autofocus type="number" min="0" max="100" step="1" value="0" class="stepper__input">
+                <div class="stepper__controls">
+                  <button type="button" spinner-button="up">+</button>
+                  <button type="button" spinner-button="down">−</button>
+                </div>
+              </div>
             </td>
             <td class="price">7 </td>
             <td class="res">руб</td>
           </tr>
           <tr>
-            <td>Икс</td>
+            <td>
+              <button class="cart__btn"><span class="visually-hidden">Удалить</span></button>
+            </td>
             <td>
               <a href="#">Фото 13х18</a>
             </td>
             <td>
-              <input type="number" name="number1" min="0" >
+              <div class="stepper js-spinner">
+                <input autofocus type="number" min="0" max="100" step="1" value="0" class="stepper__input">
+                <div class="stepper__controls">
+                  <button type="button" spinner-button="up">+</button>
+                  <button type="button" spinner-button="down">−</button>
+                </div>
+              </div>
             </td>
             <td>12 </td>
             <td class="res">руб</td>
           </tr>
           <tr>
-            <td>Икс</td>
+            <td>
+              <button class="cart__btn"><span class="visually-hidden">Удалить</span></button>
+            </td>
             <td>
               <a href="#">Фото 15х21</a>
             </td>
             <td>
-              <input type="number" name="15x21" min="0" >
+              <div class="stepper js-spinner">
+                <input autofocus type="number" min="0" max="100" step="1" value="0" class="stepper__input">
+                <div class="stepper__controls">
+                  <button type="button" spinner-button="up">+</button>
+                  <button type="button" spinner-button="down">−</button>
+                </div>
+              </div>
             </td>
             <td>15 </td>
-            <td>nan </td>
+            <td>руб</td>
           </tr>
           <tr>
-            <td>Икс</td>
+            <td>
+              <button class="cart__btn"><span class="visually-hidden">Удалить</span></button>
+            </td>
             <td>
               <a href="#">Фото 21х30</a>
             </td>
             <td>
-              <input type="number" name="21x30" min="0">
+              <div class="stepper js-spinner">
+                <input autofocus type="number" min="0" max="100" step="1" value="0" class="stepper__input">
+                <div class="stepper__controls">
+                  <button type="button" spinner-button="up">+</button>
+                  <button type="button" spinner-button="down">−</button>
+                </div>
+              </div>
             </td>
             <td>30 </td>
-            <td>nan </td>
+            <td>руб </td>
           </tr>
           <tr>
-            <td>Икс</td>
+            <td>
+              <button class="cart__btn"><span class="visually-hidden">Удалить</span></button>
+            </td>
             <td>
               <a href="#">Фото 30х42</a>
             </td>
             <td>
-              <input type="number" name="30x42" min="0" >
+              <div class="stepper js-spinner">
+                <input autofocus type="number" min="0" max="100" step="1" value="0" class="stepper__input">
+                <div class="stepper__controls">
+                  <button type="button" spinner-button="up">+</button>
+                  <button type="button" spinner-button="down">−</button>
+                </div>
+              </div>
             </td>
             <td>7 </td>
-            <td>nan </td>
+            <td>руб</td>
           </tr>
           <tr>
-            <td>Икс</td>
+            <td>
+              <button class="cart__btn"><span class="visually-hidden">Удалить</span></button>
+            </td>
             <td>
               <a href="#">Фоторамка</a>
             </td>
             <td>
-              <input type="number" name="foto-border" min="0" >
+              <div class="stepper js-spinner">
+                <input autofocus type="number" min="0" max="100" step="1" value="0" class="stepper__input">
+                <div class="stepper__controls">
+                  <button type="button" spinner-button="up">+</button>
+                  <button type="button" spinner-button="down">−</button>
+                </div>
+              </div>
             </td>
             <td>100 </td>
-            <td>nan </td>
+            <td>руб</td>
           </tr>
           <tr>
-            <td>Икс</td>
+            <td>
+              <button class="cart__btn"><span class="visually-hidden">Удалить</span></button>
+            </td>
             <td>
               <a href="#">Фоторамка</a>
             </td>
             <td>
-              <input type="number" name="foto-border" min="0" >
+              <div class="stepper js-spinner">
+                <input autofocus type="number" min="0" max="100" step="1" value="0" class="stepper__input">
+                <div class="stepper__controls">
+                  <button type="button" spinner-button="up">+</button>
+                  <button type="button" spinner-button="down">−</button>
+                </div>
+              </div>
             </td>
             <td>110 </td>
-            <td>nan </td>
+            <td>руб</td>
             </tr>
             <tr>
-            <td colspan="2">Доставка</td>
-            <td><input type="number" name="foto-borde" min="0" ></td>
+            <td>
+              <button class="cart__btn"><span class="visually-hidden">Удалить</span></button>
+            </td>
+            <td colspan="1">Доставка</td>
+            <td>
+              <div class="stepper js-spinner">
+                <input autofocus type="number" min="0" max="100" step="1" value="0" class="stepper__input">
+                <div class="stepper__controls">
+                  <button type="button" spinner-button="up">+</button>
+                  <button type="button" spinner-button="down">−</button>
+                </div>
+              </div>
+            </td>
             <td>50 </td>
-            <td>nan </td>
+            <td>руб</td>
             </tr>
             <tr>
             <td colspan="2">Итого</td>
-            <td colspan="2"><button>Пересчитать</button></td>
-            <td>nan </td>
+            <td colspan="2"><button class="cart__btn-recount">Пересчитать</button></td>
+            <td>руб</td>
             </tr>
           </table>
         </div>
