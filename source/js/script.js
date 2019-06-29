@@ -1,37 +1,18 @@
 window.onload = function(e){
+var linkLog = document.querySelector('.user-list__log');
+var popup = document.querySelector('.modal-login');
+var modalBtn = document.querySelector('.modal__close');
 
-//     var inp1 = document.querySelector('input[name=number]');
-//     var inp2 = document.querySelector('input[name=13x18]');
-//     var td = document.querySelector('.res');
-//     var price document.querySelector('.price');
+  linkLog.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    popup.classList.add("modal__activ");
+    console.log ("11");
+  });
 
-//     var buttons = document.querySelectorAll('input[type=button]');
-
-//     for(var i = 0; i < buttons.length; i++){
-//         buttons[i].onclick = function(){
-//             var op = this.getAttribute('data-op');
-//             calcForm(op);
-//         }
-//     }
-
-//     function calcForm(op){
-//         var a = parseInt(inp1.value);
-//         var b = parseInt(inp2.value);
-//         var res;
-
-//         if(op === '+'){
-//             res = a + b;
-//         }
-//         else if{
-//             res = 'странная операция';
-//         }
-
-//         td.innerHTML = res;
-//     }
-
-  document.querySelector("form").onsubmit = function () {
-    alert(422);
-  }
+  modalBtn.addEventListener("click", function (evt){
+    evt.preventDefault();
+    popup.classList.remove("modal__activ")
+  });
 }
 
 
@@ -51,4 +32,6 @@ $(document).ready(function() {
     return false;
     });
 });
+
+
 

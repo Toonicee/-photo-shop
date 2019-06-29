@@ -1,13 +1,14 @@
 .modal-login {
   padding: 30px;
-  display: none;
   background-color: #F8ECE3;
   position: fixed;
-  left: 35%;
-  top: 10%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -500%);
   width: 270px;
   z-index: 100;
   box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  transition: 1s;
   border-radius: 10px;
 
   a {
@@ -25,6 +26,10 @@
       opacity: 0.3;
     }
   }
+}
+
+.modal__activ {
+  transform: translate(-50%, -50%);
 }
 
 .modal__fieldset {
@@ -63,9 +68,11 @@
   font-size: 18px;
   opacity: 0.4;
   margin: 0 30px;
+  cursor: pointer;
 }
 
 .modal__close {
+  cursor: pointer;
   background-color: #F8ECE3;
   border: none;
   width: 20px;
@@ -146,6 +153,7 @@
   text-align: right;
   width: auto;
   display: block;
+  cursor: pointer;
   margin: 0 auto;
   background-color: #60452F;
   color: #fff;
@@ -182,12 +190,6 @@
 
 
 @media (max-width: 768px) {
-  .modal-login {
-    padding: 30px;
-    left: 0;
-    width: 300px;
-    margin: 0 auto;
-  }
 
   .modal__close {
     right: 10px;

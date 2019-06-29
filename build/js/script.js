@@ -1,164 +1,37 @@
-/*jshint esversion: 6 */
-(function ($) {
-    "use strict";
-    $.fn.stepper = function (options) {
-        let timeout;
-        const debounce = function (func, wait, immediate) {
-            let timeout;
-            return function () {
-                let context = this, args = arguments;
-                let later = function () {
-                    timeout = null;
-                    if (!immediate) func.apply(context, args);
-                };
-                let callNow = immediate && !timeout;
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-                if (callNow) func.apply(context, args);
-            };
-        };
+window.onload = function(e){
+var linkLog = document.querySelector('.user-list__log');
+var popup = document.querySelector('.modal-login');
+var modalBtn = document.querySelector('.modal__close');
 
-        const is_touch_device = function() {
-            try {
-                document.createEvent("TouchEvent");
-                return true;
-            } catch (e) {
-                return false;
-            }
-        };
+  linkLog.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    popup.classList.add("modal__activ");
+    console.log ("11");
+  });
 
-        const findDecimals = function (num) {
-            return (num.split('.')[1] || []).length;
-        };
-
-        const getValue = function () {
-            return $(this).val() === '' ? 0 : $(this).val();
-        };
-
-        const bindEvents = function () {
-            const spinner = $(this).closest('.js-spinner');
-            const events = is_touch_device() ? 'touchstart' : 'mousedown';
-            var _this = this;
-
-            spinner.find('[spinner-button]')
-                .on(events, function () {
-                    const type = $(this).attr('spinner-button');
-                    if (type === 'up') {
-                        $.fn.stepper.increase.call(_this);
-                    } else {
-                        $.fn.stepper.decrease.call(_this);
-                    }
-                })
-                .on('mousedown', function () {
-                    const type = $(this).attr('spinner-button');
-                    $(this).data('timer', setTimeout(() => {
-                        timeout = setInterval(() => {
-                            if (type === 'up') {
-                                $.fn.stepper.increase.call(_this);
-                            } else {
-                                $.fn.stepper.decrease.call(_this);
-                            }
-                        }, 60);
-                    }, _this.settings.debounce));
-                })
-                .on('mouseup', function () {
-                    clearTimeout($(this).data('timer'));
-                });
-
-            $(document).mouseup(function () {
-                clearInterval(timeout);
-            });
-        };
-
-        /**
-         * Increase
-         */
-        $.fn.stepper.increase = function () {
-            let current = parseFloat(getValue.call(this));
-            this.settings = $(this).data('settings');
-            const decimals = findDecimals(this.settings.step);
-            const newValue = (current + parseFloat(this.settings.step)).toFixed(decimals);
-            const currentValue = $(this).val();
-            updateValue.call(this, newValue, currentValue);
-        };
-
-        /**
-         * Decrease
-         */
-
-        $.fn.stepper.decrease = function () {
-            let current = parseFloat(getValue.call(this));
-            this.settings = $(this).data('settings');
-            const decimals = findDecimals(this.settings.step);
-            const newValue = (current - parseFloat(this.settings.step)).toFixed(decimals);
-            const currentValue = $(this).val();
-            updateValue.call(this, newValue, currentValue);
-        };
-
-        /**
-         * Update stepper element
-         * @param newValue
-         * @param currentValue
-         */
-        const updateValue = function (newValue, currentValue) {
-            if ((newValue <= this.settings.max || typeof this.settings.max === "undefined") && (newValue >= this.settings.min || typeof this.settings.min === "undefined")) {
-                if(!is_touch_device()){
-                    $(this).val(newValue).focus();
-                }else{
-                    $(this).val(newValue);
-                }
-                triggerChange.call(this);
-            }else if(currentValue > this.settings.max){
-                $(this).val(this.settings.max);
-            }else if(currentValue < this.settings.min){
-                $(this).val(this.settings.min);
-            }
-        };
-
-        /**
-         * Trigger change event on number field for third party hooks
-         *
-         * @type {Function}
-         */
-        const triggerChange = debounce(function () {
-            $(this).trigger('change');
-        }, 400);
-
-        /**
-         * Loop every instance
-         */
-        return this.each(function () {
-
-            /**
-             * Default settings merged with user settings
-             * Can be set trough data attributes or as parameter.
-             * @type {*}
-             */
-            this.settings = $.extend({
-                step: $(this).is('[step]') ? $(this).attr('step') : '1',
-                min: $(this).is('[min]') ? parseFloat($(this).attr('min')) : undefined,
-                max: $(this).is('[max]') ? parseFloat($(this).attr('max')) : undefined,
-                debounce: $(this).is('[data-stepper-debounce]') ? parseInt($(this).attr('data-stepper-debounce')) : 400,
-            }, options);
+  modalBtn.addEventListener("click", function (evt){
+    evt.preventDefault();
+    popup.classList.remove("modal__activ")
+  });
+}
 
 
-            this.init = () => {
-                // Store settings
-                $(this).data('settings', this.settings);
+$(document).ready(function() {
+  $('.minus').click(function () {
+    var $input = $(this).parent().find('input');
+    var count = parseInt($input.val()) - 1;
+    count = count < 1 ? 1 : count;
+    $input.val(count);
+    $input.change();
+    return false;
+    });
+  $('.plus').click(function () {
+    var $input = $(this).parent().find('input');
+    $input.val(parseInt($input.val()) + 1);
+    $input.change();
+    return false;
+    });
+});
 
-                // Bind events
-                bindEvents.call(this);
-            };
 
-            // Init
-            this.init();
 
-        });
-    };
-
-    /**
-     * Auto load
-     */
-    $('input[type="number"]').stepper();
-
-}(jQuery));
